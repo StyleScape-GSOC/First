@@ -7,7 +7,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Center Alignment for Content */
+
 .center {
     text-align: center;
     margin: 0 auto;
@@ -121,7 +121,7 @@ nav ul li a:hover {
     }
     to {
         transform: translateY(0);
-        opacity: 1;
+        opacity: 2;
     }
 }
 
