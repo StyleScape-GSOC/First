@@ -5,9 +5,67 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    position: relative;
 }
 
+/* Floating Layers for Interactive Background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.1));
+    animation: rotateBackground 15s infinite linear;
+    z-index: -1;
+    transform-origin: center;
+    opacity: 0.7;
+}
 
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Subtle Pulsing Effect */
+body::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 10s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+}
+
+/* Center Alignment for Content */
 .center {
     text-align: center;
     margin: 0 auto;
@@ -27,6 +85,27 @@ body {
     font-size: 1.5rem;
     color: #cd7f32; /* Bronze */
     margin-bottom: 20px;
+    animation: moveUp 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Navigation Bar */
@@ -37,6 +116,7 @@ nav ul {
     gap: 40px;
     justify-content: center;
     margin: 20px 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
 nav ul li a {
@@ -56,13 +136,14 @@ nav ul li a:hover {
     padding: 100px 20px;
     position: relative;
     overflow: hidden;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .hero-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #fff;
-    animation: fadeInSlide 2s ease-in-out;
+    animation: moveUp 2s ease-in-out;
 }
 
 .cta-btn {
@@ -74,6 +155,7 @@ nav ul li a:hover {
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: fadeInSlide 3s ease-in-out;
 }
 
 .cta-btn:hover {
@@ -94,26 +176,6 @@ nav ul li a:hover {
     z-index: -1;
 }
 
-@keyframes glow {
-    0% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    100% {
-        transform: scale(1.5);
-        opacity: 0.2;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 @keyframes fadeInSlide {
     from {
         transform: translateY(50px);
@@ -121,7 +183,7 @@ nav ul li a:hover {
     }
     to {
         transform: translateY(0);
-        opacity: 2;
+        opacity: 1;
     }
 }
 
@@ -131,6 +193,7 @@ nav ul li a:hover {
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .filters button {
