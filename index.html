@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleScape</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="center">
+            <h1 class="brand-title">StyleScape</h1>
+            <p class="tagline">Refine Your Backdrop</p>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="center">
+            <!-- Hero Section -->
+            <section id="home" class="hero-section">
+                <h2>Imagine. Transform. Refine.</h2>
+                <button id="start-camera" class="cta-btn">Start Camera</button>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" class="animated-section">
+                <h2>Discover the Filters</h2>
+                <p>Transform your backdrop with curated styles:</p>
+                <div class="filters">
+                    <button onclick="applyFilter('Carpet')">Carpet</button>
+                    <button onclick="applyFilter('Screens')">Screens</button>
+                    <button onclick="applyFilter('Wall Art')">Wall Art</button>
+                </div>
+            </section>
+
+            <!-- Webcam Video Section -->
+            <div class="video-container">
+                <video id="webcamVideo" autoplay></video>
+            </div>
+
+            <!-- About Section -->
+            <section id="about" class="animated-section">
+                <h2>About StyleScape</h2>
+                <p>StyleScape uses cutting-edge AR to help you visualize your perfect decor. See your space in a new light, effortlessly.</p>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="animated-section">
+                <h2>Contact Us</h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="center">
+            <p>&copy; 2024 StyleScape. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
